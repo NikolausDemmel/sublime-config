@@ -1,0 +1,79 @@
+{
+	"WrapPlus.wrap_width": 72,
+	"always_show_minimap_viewport": true,
+	"anaconda_linting": false,
+	"auto_complete_commit_on_tab": true,
+	"codeintel_disabled_languages":
+	[
+		"Python"
+	],
+	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
+	"complete_all_parameters": false,
+	"complete_parameters": false,
+	"dictionary": "Packages/Language - English/en_US.dic",
+	"display_signatures": true,
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace"
+	],
+	"find_selected_text": true,
+	"folder_exclude_patterns":
+	[
+		".git",
+		".hg",
+		".svn",
+		"__pycache__",
+		"CVS",
+		"venv"
+	],
+	"font_size": 11,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"SublimeLinter-flake8",
+		"Jedi - Python autocompletion",
+		"Vintage",
+		"SideBarEnhancements",
+		"Anaconda",
+		"SublimeLinter",
+		"RestructuredText"
+	],
+	"keymaps":
+	{
+		"show_pretty_keys": true
+	},
+	"rulers":
+	[
+		72,
+		79
+	],
+	"sbp_active_mark_mode": true,
+	"shift_tab_unindent": true,
+	"show_full_path": true,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": false,
+	"word_wrap": true,
+	"wrap_width": 0
+}

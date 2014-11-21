@@ -1,0 +1,106 @@
+[
+    { "keys": ["alt+q"], "command": "wrap_lines_plus" },
+    { "keys": ["ctrl+/"], "command": "undo" },
+    { "keys": ["alt+super+tab"], "command": "smart_folding","context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.restructuredtext" }
+        ]
+    },
+    { "keys": ["alt+-"], "command": "header_change_level", "args": {"offset": 1},  "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.restructuredtext" }
+        ]
+    },
+
+
+//    {"keys": ["tab"], "command": "indent"},
+
+
+    { "keys": ["tab"], "command": "insert_best_completion", "args": {"default": "\t", "exact": true}, "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.restructuredtext", "match_all": true }
+        ]
+    },
+    { "keys": ["tab"], "command": "insert_best_completion", "args": {"default": "\t", "exact": false},
+        "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.restructuredtext" },
+            { "key": "setting.tab_completion", "operator": "equal", "operand": true }
+        ]
+    },
+    { "keys": ["tab"], "command": "replace_completion_with_next_completion", "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.restructuredtext" },
+            { "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
+            { "key": "setting.tab_completion", "operator": "equal", "operand": true }
+        ]
+    },
+    { "keys": ["tab"], "command": "reindent", "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.restructuredtext" },
+            { "key": "setting.auto_indent", "operator": "equal", "operand": true },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
+            { "key": "following_text", "operator": "regex_match", "operand": "^$", "match_all": true }
+        ]
+    },
+    { "keys": ["tab"], "command": "indent", "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.restructuredtext" },
+            { "key": "text", "operator": "regex_contains", "operand": "\n" }
+        ]
+    },
+    { "keys": ["tab"], "command": "next_field", "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.restructuredtext" },
+            { "key": "has_next_field", "operator": "equal", "operand": true }
+        ]
+    },
+    { "keys": ["tab"], "command": "commit_completion", "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.restructuredtext" },
+            { "key": "auto_complete_visible" },
+            { "key": "setting.auto_complete_commit_on_tab" }
+        ]
+    },
+    { "keys": ["tab"], "command": "smart_header", "context":
+          [
+            { "key": "selector", "operator": "equal", "operand": "text.restructuredtext" },
+            { "key": "preceding_text", "operator": "regex_match", "operand": "([!\\\"#$%&'\\\\()*+,\\-./:;<=>?@\\[\\]\\^_`{|}~])\\1\\1+$" }
+           ]
+    },
+    { "keys": ["tab"], "command": "indent_list_item", "context":
+        [
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "preceding_text", "operator": "regex_contains", "operand": "^\\s*([-+*]|([(]?(\\d+|#|[a-y]|[A-Y]|[MDCLXVImdclxvi]+))[).])\\s+$", "match_all": true },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^$", "match_all": true },
+            { "key": "selector", "operator": "equal", "operand": "text.restructuredtext", "match_all": true }
+        ]
+    },
+    { "keys": ["shift+tab"], "command": "indent_list_item", "args": {"reverse": true}, "context":
+        [
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "preceding_text", "operator": "regex_contains", "operand": "^\\s*([-+*]|([(]?(\\d+|#|[a-y]|[A-Y]|[MDCLXVImdclxvi]+))[).])\\s+$", "match_all": true },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^$", "match_all": true },
+            { "key": "selector", "operator": "equal", "operand": "text.restructuredtext", "match_all": true }
+        ]
+    },
+    // {"keys": ["tab"], "command": "sbp_tab_cmd",  "context": [
+    //     {"key": "panel_has_focus",  "operand": false },
+    //     {"key": "auto_complete_visible", "operand": false },
+    //     {"key": "has_next_field", "operand": false },
+    //     {"key": "overlay_visible", "operand": false }]
+    // },
+
+
+
+    // considers empty lines as paragraphs
+    {"keys": ["alt+up"], "command": "sbp_move_to_paragraph", "args": {"direction": 1} },
+    {"keys": ["alt+down"], "command": "sbp_move_to_paragraph", "args": {"direction": -1} },
+
+    // the following skips empty lines, which is maybe not exactly what I want
+    // {"keys": ["alt+up"], "command": "move_by_paragraph", "args": {"forward": false}},
+    // {"keys": ["alt+down"], "command": "move_by_paragraph", "args": {"forward": true}},
+
+
+]
